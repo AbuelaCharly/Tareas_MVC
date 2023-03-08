@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Entidades\" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="NuGet.CommandLine" />
+    <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <None Remove="Views\Usuarios\" />
+    <None Remove="Servicios\" />
+    <None Remove="Recursos\" />
+    <None Remove="Recursos\Controllers\" />
+    <None Remove="Recursos\Controller.HomeController" />
+    <None Remove="Resx" />
+    <None Remove="Recursos\Views\" />
+    <None Remove="Recursos\Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="NuGet.CommandLine" Version="6.4.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.14" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entidades\" />
+    <Folder Include="Views\Usuarios\" />
+    <Folder Include="Servicios\" />
+    <Folder Include="Recursos\" />
+    <Folder Include="Recursos\Controllers\" />
+    <Folder Include="Recursos\Views\" />
+    <Folder Include="Recursos\Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Recursos\Controllers\HomeController.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HomeController.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Recursos\Views\Home\Index.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Recursos\Controllers\HomeController.en.Designer.cs">
+      <DependentUpon>HomeController.en.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Recursos\Views\Home\Index.en.Designer.cs">
+      <DependentUpon>Index.en.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
